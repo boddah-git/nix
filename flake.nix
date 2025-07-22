@@ -16,7 +16,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
-      pkgs = import nixpkgs {system = settings.system;};
+      pkgs = import nixpkgs { system = settings.system; };
       settings = import (./. + "/settings.nix") {inherit pkgs inputs;};
       lib = nixpkgs.lib;
     in {
