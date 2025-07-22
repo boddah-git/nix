@@ -7,8 +7,8 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../system/hardware/sound.nix
-  ] ++ (map (wm: ../../system/wm/${wm}.nix) settings.wms);
+    ../../modules/nixos/hardware/sound.nix
+  ] ++ (map (wm: ../../modules/nixos/wm/${wm}.nix) settings.wms);
 
   # Bootloader.
   boot.loader.grub.enable = true;

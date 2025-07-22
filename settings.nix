@@ -15,10 +15,16 @@ rec {
     
     dotfilesDir = "~/.dotfiles";
 
-    wms = ["kde" "hyprland"];
-    wmType = if ((wm == "hyprland") || (wm == "plasma")) then "wayland" else "x11";
+    shell = "zsh";
+    shellPkg = pkgs.zsh;
 
-    browser = "firefox";
+    wms = ["kde" "hyprland"];
+
+    browsers = [ "firefox" ];
+    editors = [ "vscode" ];
+
+    preferredEditor = "vscode";
+    prefferedBrowser = "firefox";
+
     terminal = "kitty";
-    font = "CaskaydiaCove Nerd Font Mono";
 }
