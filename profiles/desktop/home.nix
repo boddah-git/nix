@@ -3,24 +3,16 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  let
-    hm = ../../modules/home-manager;
-    apps = hm/apps;
-    shells = hm/shells;
-    wms = hm/wms;
-    editors = hm/editors;
-    browsers = hm/browsers;
-  in {
-    imports = [
-      apps/kitty.nix
-      apps/fastfetch.nix
-      shells/${settings.shell}.nix
-    ] ++ (map (wm: wms/${wm}.nix) settings.wms)
-      ++ (map (editor: editors/${editor}/default.nix) settings.editors)
-      ++ (map (browser: browsers/${browser}.nix) settings.browsers);
-    
-    nixpkgs.config.allowUnfree = true;
-  }
+  imports = [
+    ../../modules/home-manager/apps/kitty.nix
+    ../../modules/home-manager/apps/fastfetch.nix
+    ../../modules/home-manager/shells/${settings.shell}.nix
+  ] ++ (map (wm: ../../modules/home-manager/wms/${wm}.nix) settings.wms)
+    ++ (map (editor: ../../modules/home-manager/editors/${editor}/default.nix) settings.editors)
+    # ++ (map (browser: ../../modules/home-manager/browsers/${browser}.nix) settings.browsers);
+  
+  nixpkgs.config.allowUnfree = true;
+  
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
