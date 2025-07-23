@@ -8,7 +8,7 @@
     ../../modules/home-manager/apps/fastfetch.nix
     ../../modules/home-manager/shells/${settings.shell}.nix
   ] ++ (map (wm: ../../modules/home-manager/wms/${wm}.nix) settings.wms)
-    ++ (map (editor: ../../modules/home-manager/editors/${editor}/default.nix) settings.editors)
+    ++ (map (editor: ../../modules/home-manager/editors/${editor}/default.nix) settings.editors);
     # ++ (map (browser: ../../modules/home-manager/browsers/${browser}.nix) settings.browsers);
   
   nixpkgs.config.allowUnfree = true;
