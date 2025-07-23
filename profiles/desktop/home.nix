@@ -18,8 +18,9 @@
     ] ++ (map (wm: wms/${wm}.nix) settings.wms)
       ++ (map (editor: editors/${editor}/default.nix) settings.editors)
       ++ (map (browser: browsers/${browser}.nix) settings.browsers);
+    
+    nixpkgs.config.allowUnfree = true;
   }
-  nixpkgs.config.allowUnfree = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
