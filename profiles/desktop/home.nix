@@ -18,7 +18,7 @@
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
-  home {
+  home = {
     username = settings.username;
     homeDirectory = "/home/${settings.username}";
     packages = with pkgs; [  ];
