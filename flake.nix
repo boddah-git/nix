@@ -12,6 +12,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
+    inherit (self) outputs;
     settings = import (./. + "/settings.nix") { inherit pkgs inputs; };
     pkgs = import nixpkgs { system = settings.system; };
     lib = nixpkgs.lib;
@@ -21,7 +22,7 @@
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
         ${settings.hostname} = lib.nixosSystem {
-          specialArgs = { inherit inputs settings; };
+          specialArgs = { inherit inputs outputs settings; };
           modules = [ (./. + "/profiles" + ("/" + settings.profile) + "/configuration.nix") ];
         };
       };
@@ -31,7 +32,7 @@
       homeConfigurations = {
         ${settings.username} = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${settings.system}; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs settings; };
+          extraSpecialArgs = { inherit inputs outputs settings; };
           modules = [ (./. + "/profiles" + ("/" + settings.profile) + "/home.nix")];
         };
       };
