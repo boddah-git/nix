@@ -21,7 +21,7 @@
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
         ${settings.hostname} = lib.nixosSystem {
-          specialArgs = { inherit inputs outputs settings; };
+          specialArgs = { inherit inputs settings; };
           modules = [ (./. + "/profiles" + ("/" + settings.profile) + "/configuration.nix") ];
         };
       };
@@ -31,7 +31,7 @@
       homeConfigurations = {
         ${settings.username} = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${settings.system}; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs settings; };
+          extraSpecialArgs = { inherit inputs settings; };
           modules = [ (./. + "/profiles" + ("/" + settings.profile) + "/home.nix")];
         };
       };
