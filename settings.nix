@@ -3,7 +3,7 @@ rec {
     # ---- SYSTEM SETTINGS ---- #
     system = "x86_64-linux";
     hostname = "nixos";
-    profile = "desktop";
+    profile = "laptop";
     timezone = "America/Argentina/Buenos_Aires";
     locale = "en_US.UTF-8";
     gpu = "nvidia";
