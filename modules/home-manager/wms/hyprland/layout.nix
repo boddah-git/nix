@@ -14,8 +14,6 @@
       gaps_out = 16;
       border_size = 2;
       allow_tearing = true;
-      "col.active_border" = "rgba(${config.lib.stylix.colors.base0D}ff)";
-      "col.inactive_border" = "rgba(${config.lib.stylix.colors.base02}ff)";
     };
 
     cursor = {
@@ -24,7 +22,7 @@
 
     decoration = {
       dim_special = 0.5;
-      rounding = details.rounding;
+      rounding = 10;
       blur = {
         enabled = true;
         special = true;
@@ -36,11 +34,10 @@
       };
 
       shadow = {
-        enabled = details.shadow;
+        enabled = true;
         ignore_window = false;
         offset = "2 2";
         range = 20;
-        color = "rgba(${config.lib.stylix.colors.base00}ff)";
       };
     };
   };
