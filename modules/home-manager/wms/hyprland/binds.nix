@@ -57,7 +57,7 @@
       "$mainMod+Shift, 9, movetoworkspace, 9"
       "$mainMod+Shift, 0, movetoworkspace, 10"
 
-      "Ctrl+Alt, Delete, global, caelestia:session"
+      "$mainMod, Backspace, global, caelestia:session"
       "$mainMod, K, global, caelestia:showall"
       "$mainMod, L, global, caelestia:lock"
       "$mainMod, A, global, caelestia:launcher"
