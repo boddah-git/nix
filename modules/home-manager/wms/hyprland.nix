@@ -6,10 +6,10 @@
     ./hyprland/env.nix
     ./hyprland/input.nix
     ./hyprland/monitor.nix
+    ./hyprland/layout.nix
   ];
 
   home.packages = with pkgs; [
-    hyprpaper
     hyprcursor
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk

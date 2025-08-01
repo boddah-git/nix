@@ -26,10 +26,12 @@
     ];
 
     bind = [
-      "$mainMod, T, exec, $term" # launch terminal emulator
+      "$mainMod, Return, exec, $term" # launch terminal emulator
       "$mainMod, E, exec, $file" # launch file manager
       "$mainMod, C, exec, $editor" # launch text editor
       "$mainMod, F, exec, $browser" # launch web browser
+
+      "$mainMod, Q, killactive,"
 
       # Switch workspaces
       "$mainMod, 1, workspace, 1"
@@ -42,6 +44,11 @@
       "$mainMod, 8, workspace, 8"
       "$mainMod, 9, workspace, 9"
       "$mainMod, 0, workspace, 10"
+    ];
+
+    bindm = [
+      "$mainMod, mouse:272, movewindow"
+      "$mainMod, mouse:273, resizewindow"
     ];
   };
 }
