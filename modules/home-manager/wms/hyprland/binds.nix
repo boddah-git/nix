@@ -4,7 +4,7 @@
 # See https://wiki.hyprland.org/Configuring/Keywords/
 #  &  https://wiki.hyprland.org/Configuring/Binds/
 
-{ config, pkgs, ... }:
+{ config, pkgs, settings, ... }:
 
 {
   wayland.windowManager.hyprland.settings = {
@@ -12,7 +12,7 @@
     "$term" = "kitty";
     "$editor" = "code --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations";
     "$file" = "thunar";
-    "$browser" = "firefox";
+    "$browser" = "${settings.prefferedBrowser}";
 
     env = [
       "XDG_CURRENT_DESKTOP,Hyprland"

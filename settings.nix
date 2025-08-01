@@ -24,7 +24,7 @@ rec {
     editors = [ "vscode" ];
 
     preferredEditor = "vscode";
-    prefferedBrowser = "firefox";
+    prefferedBrowser = "zen";
 
     terminal = "kitty";
 }
