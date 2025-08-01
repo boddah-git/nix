@@ -17,9 +17,5 @@
       "MOZ_ENABLE_WAYLAND,1"
       "XDG_SESSION_TYPE,wayland"
     ];
-
-    exec-once = [
-      "firefox"
-    ];
   };
 }

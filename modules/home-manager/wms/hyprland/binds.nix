@@ -8,10 +8,10 @@
 
 {
   wayland.windowManager.hyprland.settings = {
-    "$mainMod" = "SUPER";
+    "$mainMod" = "Super";
     "$term" = "kitty";
     "$editor" = "code";
-    "$file" = "dolphin";
+    "$file" = "thunar";
     "$browser" = "firefox";
 
     env = [
@@ -48,6 +48,7 @@
       "Ctrl+Alt, Delete, global, caelestia:session"
       "$mainMod, K, global, caelestia:showall"
       "$mainMod, L, global, caelestia:lock"
+      "$mainMod, A, global, caelestia:launcher"
     ];
 
     bindm = [
@@ -55,11 +56,8 @@
       "$mainMod, mouse:273, resizewindow"
     ];
 
+    exec = "hyprctl dispatch submap global";
     submap = "global";
-
-    bindi = [
-      "$mainMod, $mainMod_L, global, caelestia:launcher"
-    ];
 
     bindin = [
       "$mainMod, catchall, global, caelestia:launcherInterrupt"
@@ -75,25 +73,11 @@
 
     bindl = [
       # Misc
-      "Ctrl+Alt, C, global, caelestia:clearNotifs"
-
-      # Restore lock
-      "$mainMod+Alt, L, exec, caelestia shell -d"
-      "$mainMod+Alt, L, global, caelestia:lock"
+      "Ctrl+Alt, N, global, caelestia:clearNotifs"
 
       # Brightness
       ", XF86MonBrightnessUp, global, caelestia:brightnessUp"
       ", XF86MonBrightnessDown, global, caelestia:brightnessDown"
-
-      # Media
-      "Ctrl+$mainMod, Space, global, caelestia:mediaToggle"
-      ", XF86AudioPlay, global, caelestia:mediaToggle"
-      ", XF86AudioPause, global, caelestia:mediaToggle"
-      "Ctrl+$mainMod, Equal, global, caelestia:mediaNext"
-      ", XF86AudioNext, global, caelestia:mediaNext"
-      "Ctrl+$mainMod, Minus, global, caelestia:mediaPrev"
-      ", XF86AudioPrev, global, caelestia:mediaPrev"
-      ", XF86AudioStop, global, caelestia:mediaStop"
     ];
 
   };

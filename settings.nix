@@ -18,7 +18,7 @@ rec {
     shell = "zsh";
     shellPkg = pkgs.zsh;
 
-    wms = [ "kde" "hyprland" ];
+    wms = [ "hyprland" ];
 
     browsers = [ "firefox" ];
     editors = [ "vscode" ];
