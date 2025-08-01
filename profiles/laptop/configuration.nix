@@ -5,15 +5,17 @@
 { config, pkgs, settings, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ../../modules/nixos/hardware/sound.nix
-  ] ++ (map (wm: ../../modules/nixos/wm/${wm}.nix) settings.wms);
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ] ++ (map (wm: ../../modules/nixos/wm/${wm}.nix) settings.wms);
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = settings.hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -32,16 +34,24 @@
   i18n.defaultLocale = settings.locale;
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "es_AR.UTF-8";
-    LC_IDENTIFICATION = "es_AR.UTF-8";
-    LC_MEASUREMENT = "es_AR.UTF-8";
-    LC_MONETARY = "es_AR.UTF-8";
-    LC_NAME = "es_AR.UTF-8";
-    LC_NUMERIC = "es_AR.UTF-8";
-    LC_PAPER = "es_AR.UTF-8";
-    LC_TELEPHONE = "es_AR.UTF-8";
-    LC_TIME = "es_AR.UTF-8";
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
   };
+
+  # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
+  services.xserver.enable = true;
+
+#   # Enable the KDE Plasma Desktop Environment.
+#   services.displayManager.sddm.enable = true;
+#   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -51,36 +61,56 @@
 
   programs.${settings.shell}.enable = true;
 
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  # Enable sound with pipewire.
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${settings.username} = {
     shell = settings.shellPkg;
     isNormalUser = true;
     description = settings.username;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 
-  services.getty.autologinUser = settings.username;
+  # Enable automatic login for the user.
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = settings.username;
+
+  # Install firefox.
+  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
+    gh
     home-manager
-    firefox
+    wget
   ];
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -109,27 +139,5 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
-  # services = {
-  #   displayManager.sddm.enable = true;
-  #   desktopManager.plasma6.enable = true;
-  # };
-
-  # Hyprland
-#  programs.hyprland = {
-#    enable = true;
-#    xwayland.enable = true;
-#  };
-
-#  environment.sessionVariables = { 
-#    # If cursor becomes invisible
-#    WLR_NO_HARDWARE_CURSORS = "1";
-#    # Hint electron apps to use wayland
-#    NIXOS_OZONE_WL = "1";
-#  };
-
-#  hardware = {
-#    # OpenGL
-#    graphics.enable = true;
-#    nvidia.modesetting.enable = true;
-#  };
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 }

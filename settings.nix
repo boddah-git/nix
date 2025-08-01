@@ -9,16 +9,16 @@ rec {
     gpu = "nvidia";
 
     # ---- USER SETTINGS ---- #
-    username = "boddah";
-    name = "BODDAH";
-    email = "boddah.bonsignore@gmail.com";
+    username = "lbonsenor";
+    name = "lbonsenor";
+    email = "lbonsenor@itba.edu.ar";
     
     dotfilesDir = "~/.dotfiles";
 
     shell = "zsh";
     shellPkg = pkgs.zsh;
 
-    wms = [ "kde" "hyprland" ];
+    wms = [ "kde" ];
 
     browsers = [ "firefox" ];
     editors = [ "vscode" ];
