@@ -6,7 +6,7 @@
     ./hyprland/env.nix
     ./hyprland/input.nix
     ./hyprland/monitor.nix
-    ./hyprland/layout1.nix
+    ./hyprland/layout.nix
     ./hyprland/hyprlock.nix
     ./hyprland/caelestia.nix
     ./hyprland/exec.nix
