@@ -6,7 +6,7 @@ rec {
     profile = "laptop";
     timezone = "America/Argentina/Buenos_Aires";
     locale = "en_US.UTF-8";
-    gpu = "nvidia";
+    gpu = "amd";
 
     # ---- USER SETTINGS ---- #
     username = "lbonsenor";
@@ -18,7 +18,7 @@ rec {
     shell = "zsh";
     shellPkg = pkgs.zsh;
 
-    wms = [ "kde" ];
+    wms = [ "hyprland" ];
 
     browsers = [ "firefox" ];
     editors = [ "vscode" ];

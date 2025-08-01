@@ -3,6 +3,9 @@
 {
   imports = [
     ./hyprland/binds.nix
+    ./hyprland/env.nix
+    ./hyprland/input.nix
+    ./hyprland/monitor.nix
   ];
 
   home.packages = with pkgs; [
