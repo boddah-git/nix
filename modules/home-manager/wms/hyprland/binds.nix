@@ -29,7 +29,7 @@
       "$mainMod, Return, exec, $term" # launch terminal emulator
       "$mainMod, E, exec, $file" # launch file manager
       "$mainMod, C, exec, $editor" # launch text editor
-      "$mainMod, F, exec, $browser" # launch web browser
+      "$mainMod, B, exec, $browser" # launch web browser
 
       "$mainMod, Q, killactive,"
 
@@ -44,11 +44,57 @@
       "$mainMod, 8, workspace, 8"
       "$mainMod, 9, workspace, 9"
       "$mainMod, 0, workspace, 10"
+
+      "Ctrl+Alt, Delete, global, caelestia:session"
+      "$mainMod, K, global, caelestia:showall"
+      "$mainMod, L, global, caelestia:lock"
     ];
 
     bindm = [
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
     ];
+
+    submap = "global";
+
+    bindi = [
+      "$mainMod, $mainMod_L, global, caelestia:launcher"
+    ];
+
+    bindin = [
+      "$mainMod, catchall, global, caelestia:launcherInterrupt"
+      "$mainMod, mouse:272, global, caelestia:launcherInterrupt"
+      "$mainMod, mouse:273, global, caelestia:launcherInterrupt"
+      "$mainMod, mouse:274, global, caelestia:launcherInterrupt"
+      "$mainMod, mouse:275, global, caelestia:launcherInterrupt"
+      "$mainMod, mouse:276, global, caelestia:launcherInterrupt"
+      "$mainMod, mouse:277, global, caelestia:launcherInterrupt"
+      "$mainMod, mouse_up, global, caelestia:launcherInterrupt"
+      "$mainMod, mouse_down, global, caelestia:launcherInterrupt"
+    ];
+
+    bindl = [
+      # Misc
+      "Ctrl+Alt, C, global, caelestia:clearNotifs"
+
+      # Restore lock
+      "$mainMod+Alt, L, exec, caelestia shell -d"
+      "$mainMod+Alt, L, global, caelestia:lock"
+
+      # Brightness
+      ", XF86MonBrightnessUp, global, caelestia:brightnessUp"
+      ", XF86MonBrightnessDown, global, caelestia:brightnessDown"
+
+      # Media
+      "Ctrl+$mainMod, Space, global, caelestia:mediaToggle"
+      ", XF86AudioPlay, global, caelestia:mediaToggle"
+      ", XF86AudioPause, global, caelestia:mediaToggle"
+      "Ctrl+$mainMod, Equal, global, caelestia:mediaNext"
+      ", XF86AudioNext, global, caelestia:mediaNext"
+      "Ctrl+$mainMod, Minus, global, caelestia:mediaPrev"
+      ", XF86AudioPrev, global, caelestia:mediaPrev"
+      ", XF86AudioStop, global, caelestia:mediaStop"
+    ];
+
   };
 }

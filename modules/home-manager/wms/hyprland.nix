@@ -7,10 +7,14 @@
     ./hyprland/input.nix
     ./hyprland/monitor.nix
     ./hyprland/layout.nix
+    ./hyprland/hyprlock.nix
+    ./hyprland/caelestia.nix
+    ./hyprland/exec.nix
   ];
 
   home.packages = with pkgs; [
     hyprcursor
+    hyprlock
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
   ];

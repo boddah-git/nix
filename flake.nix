@@ -12,6 +12,8 @@
 
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
+
+    caelestia.url = "github:caelestia-dots/shell";
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
