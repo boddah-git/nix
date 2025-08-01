@@ -10,7 +10,7 @@
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "Super";
     "$term" = "kitty";
-    "$editor" = "code";
+    "$editor" = "code --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations";
     "$file" = "thunar";
     "$browser" = "firefox";
 
@@ -72,7 +72,7 @@
     submap = "global";
 
     bindin = [
-      "$mainMod, catchall, global, caelestia:launcherInterrupt"
+      # "$mainMod, catchall, global, caelestia:launcherInterrupt"
       "$mainMod, mouse:272, global, caelestia:launcherInterrupt"
       "$mainMod, mouse:273, global, caelestia:launcherInterrupt"
       "$mainMod, mouse:274, global, caelestia:launcherInterrupt"
@@ -90,6 +90,15 @@
       # Brightness
       ", XF86MonBrightnessUp, global, caelestia:brightnessUp"
       ", XF86MonBrightnessDown, global, caelestia:brightnessDown"
+
+      # Volume
+      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      "Super+Shift, M, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    ];
+
+    bindle = [
+      ", XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%+"
+      ", XF86AudioLowerVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-"
     ];
 
   };

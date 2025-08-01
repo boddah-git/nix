@@ -3,4 +3,13 @@ in {
     home.packages = with pkgs; [
         inputs.caelestia.packages.${pkgs.system}.default
     ];
+
+    wayland.windowManager.hyprland.settings = {
+        exec-once = [
+            "caelestia-shell -d"
+        ];
+    };
 }
+
+
+    

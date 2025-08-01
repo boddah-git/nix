@@ -10,10 +10,10 @@
     ./hyprland/hyprlock.nix
     ./hyprland/caelestia.nix
     ./hyprland/exec.nix
+    ./hyprland/cursor.nix
   ];
 
   home.packages = with pkgs; [
-    hyprcursor
     hyprlock
     xfce.thunar
     xdg-desktop-portal-hyprland

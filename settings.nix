@@ -20,7 +20,7 @@ rec {
 
     wms = [ "hyprland" ];
 
-    browsers = [ "firefox" ];
+    browsers = [ "zen" ];
     editors = [ "vscode" ];
 
     preferredEditor = "vscode";
