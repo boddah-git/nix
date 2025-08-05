@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/nixos/itba/default.nix
     ] ++ (map (wm: ../../modules/nixos/wm/${wm}.nix) settings.wms);
 
   # Bootloader.
@@ -88,7 +89,7 @@
     shell = settings.shellPkg;
     isNormalUser = true;
     description = settings.username;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "wireshark" ];
     packages = with pkgs; [ ];
   };
 
