@@ -13,6 +13,14 @@
 
   environment.systemPackages = with pkgs; [
     wireshark
+    gcc
+    man-pages
+    man-pages-posix
   ];
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ settings.username ];
+
+  virtualisation.virtualbox.host.enableExtensionPack = true;
 
 }

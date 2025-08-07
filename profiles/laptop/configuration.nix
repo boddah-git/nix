@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/nixos/itba/default.nix
+      ../../modules/nixos/korean/default.nix
     ] ++ (map (wm: ../../modules/nixos/wm/${wm}.nix) settings.wms);
 
   # Bootloader.
@@ -111,6 +112,11 @@
     gh
     home-manager
     wget
+    gcc
+    libgcc
+    gnumake
+    cmake
+    extra-cmake-modules
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

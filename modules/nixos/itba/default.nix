@@ -3,5 +3,6 @@
 {
   imports = [
     ./subjects/protos.nix
+    ./subjects/paw.nix
   ];
 }
