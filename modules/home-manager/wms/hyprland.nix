@@ -8,9 +8,10 @@
     ./hyprland/monitor.nix
     ./hyprland/layout.nix
     ./hyprland/hyprlock.nix
-    ./hyprland/caelestia.nix
     ./hyprland/exec.nix
     ./hyprland/cursor.nix
+    # ./hyprland/caelestia.nix
+    ./hyprland/waybar/default.nix
   ];
 
   home.packages = with pkgs; [

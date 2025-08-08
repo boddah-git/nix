@@ -57,10 +57,10 @@
       "$mainMod+Shift, 9, movetoworkspace, 9"
       "$mainMod+Shift, 0, movetoworkspace, 10"
 
-      "$mainMod, Backspace, global, caelestia:session"
-      "$mainMod, K, global, caelestia:showall"
-      "$mainMod, L, global, caelestia:lock"
-      "$mainMod, A, global, caelestia:launcher"
+      # "$mainMod, Backspace, global, caelestia:session"
+      # "$mainMod, K, global, caelestia:showall"
+      # "$mainMod, L, global, caelestia:lock"
+      # "$mainMod, A, global, caelestia:launcher"
     ];
 
     bindm = [
@@ -73,23 +73,23 @@
 
     bindin = [
       # "$mainMod, catchall, global, caelestia:launcherInterrupt"
-      "$mainMod, mouse:272, global, caelestia:launcherInterrupt"
-      "$mainMod, mouse:273, global, caelestia:launcherInterrupt"
-      "$mainMod, mouse:274, global, caelestia:launcherInterrupt"
-      "$mainMod, mouse:275, global, caelestia:launcherInterrupt"
-      "$mainMod, mouse:276, global, caelestia:launcherInterrupt"
-      "$mainMod, mouse:277, global, caelestia:launcherInterrupt"
-      "$mainMod, mouse_up, global, caelestia:launcherInterrupt"
-      "$mainMod, mouse_down, global, caelestia:launcherInterrupt"
+      # "$mainMod, mouse:272, global, caelestia:launcherInterrupt"
+      # "$mainMod, mouse:273, global, caelestia:launcherInterrupt"
+      # "$mainMod, mouse:274, global, caelestia:launcherInterrupt"
+      # "$mainMod, mouse:275, global, caelestia:launcherInterrupt"
+      # "$mainMod, mouse:276, global, caelestia:launcherInterrupt"
+      # "$mainMod, mouse:277, global, caelestia:launcherInterrupt"
+      # "$mainMod, mouse_up, global, caelestia:launcherInterrupt"
+      # "$mainMod, mouse_down, global, caelestia:launcherInterrupt"
     ];
 
     bindl = [
       # Misc
-      "Ctrl+Alt, N, global, caelestia:clearNotifs"
+      # "Ctrl+Alt, N, global, caelestia:clearNotifs"
 
       # Brightness
-      ", XF86MonBrightnessUp, global, caelestia:brightnessUp"
-      ", XF86MonBrightnessDown, global, caelestia:brightnessDown"
+      # ", XF86MonBrightnessUp, global, caelestia:brightnessUp"
+      # ", XF86MonBrightnessDown, global, caelestia:brightnessDown"
 
       # Volume
       ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
