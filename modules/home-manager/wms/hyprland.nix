@@ -10,6 +10,7 @@
     ./hyprland/hyprlock.nix
     ./hyprland/exec.nix
     ./hyprland/cursor.nix
+    # ./hyprland/hyprpaper.nix
     # ./hyprland/caelestia.nix
     ./hyprland/waybar/default.nix
   ];

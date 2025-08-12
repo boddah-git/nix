@@ -32,6 +32,7 @@
       "$mainMod, B, exec, $browser" # launch web browser
 
       "$mainMod, Q, killactive,"
+      "$mainMod, A, exec, rofi -show"
 
       # Switch workspaces
       "$mainMod, 1, workspace, 1"

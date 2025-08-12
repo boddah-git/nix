@@ -1,4 +1,4 @@
-{ ... }: {
+{ settings, ... }: {
 
   wayland.windowManager.hyprland.settings = {
   exec-once = [
@@ -80,6 +80,7 @@
       };
       clock = {
         format = " {:%I:%M %p   %m/%d} ";
+        timezone = settings.timezone;
         tooltip-format = ''
           <big>{:%Y %B}</big>
           <tt><small>{calendar}</small></tt>'';

@@ -14,6 +14,11 @@
     hyprland.url = "github:hyprwm/Hyprland";
     caelestia.url = "github:caelestia-dots/shell";
 
+    hyprpaper = {
+      url = "github:hyprwm/hyprpaper";
+      inputs.nixpkgs.follows = "nixpkgs";
+   };
+
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
