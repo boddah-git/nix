@@ -22,5 +22,8 @@
   users.extraGroups.vboxusers.members = [ settings.username ];
 
   virtualisation.virtualbox.host.enableExtensionPack = true;
+  
+  boot.blacklistedKernelModules = [ "kvm_amd" ];
+
 
 }

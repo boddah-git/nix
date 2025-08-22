@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/nixos/itba/default.nix
+      ../../modules/nixos/apps/python.nix
       ../../modules/nixos/korean/default.nix
     ] ++ (map (wm: ../../modules/nixos/wm/${wm}.nix) settings.wms);
 
@@ -117,6 +118,7 @@
     gnumake
     cmake
     extra-cmake-modules
+    unzip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
