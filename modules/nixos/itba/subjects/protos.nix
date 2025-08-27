@@ -16,6 +16,7 @@
     gcc
     man-pages
     man-pages-posix
+    dig
   ];
 
   virtualisation.virtualbox.host.enable = true;
