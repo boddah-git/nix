@@ -10,8 +10,6 @@
     ./hyprland/hyprlock.nix
     ./hyprland/exec.nix
     ./hyprland/cursor.nix
-    # ./hyprland/hyprpaper.nix
-    # ./hyprland/caelestia.nix
     ./hyprland/waybar/default.nix
   ];
 
@@ -21,8 +19,6 @@
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
   ];
-
-  programs.kitty.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;

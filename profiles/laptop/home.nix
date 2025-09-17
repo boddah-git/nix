@@ -4,13 +4,13 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   imports = [
-    ../../modules/home-manager/apps/kitty.nix
-    ../../modules/home-manager/apps/fastfetch.nix
-    ../../modules/home-manager/apps/rofi.nix
-    ../../modules/home-manager/shells/${settings.shell}.nix
-  ] ++ (map (wm: ../../modules/home-manager/wms/${wm}.nix) settings.wms)
-    ++ (map (editor: ../../modules/home-manager/editors/${editor}/default.nix) settings.editors)
-    ++ (map (browser: ../../modules/home-manager/browsers/${browser}.nix) settings.browsers);
+    # ../../modules/home-manager/apps/kitty.nix
+    # ../../modules/home-manager/apps/fastfetch.nix
+    # ../../modules/home-manager/apps/rofi.nix
+    # ../../modules/home-manager/shells/${settings.shell}.nix
+  ] ++ (map (wm: ../../modules/home-manager/wms/${wm}.nix) settings.wms);
+    # ++ (map (editor: ../../modules/home-manager/editors/${editor}/default.nix) settings.editors);
+    # ++ (map (browser: ../../modules/home-manager/browsers/${browser}.nix) settings.browsers);
   
   nixpkgs.config.allowUnfree = true;
   

@@ -4,6 +4,3 @@ in {
         inputs.zen-browser.packages.${pkgs.system}.default
     ];
 }
-
-
-    

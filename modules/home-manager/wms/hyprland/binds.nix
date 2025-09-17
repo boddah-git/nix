@@ -10,7 +10,7 @@
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "Super";
     "$term" = "kitty";
-    "$editor" = "code --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations";
+    "$editor" = "code --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --extensions-dir ~/.vscode/extensions";
     "$file" = "thunar";
     "$browser" = "${settings.prefferedBrowser}";
 
@@ -32,7 +32,7 @@
       "$mainMod, B, exec, $browser" # launch web browser
 
       "$mainMod, Q, killactive,"
-      "$mainMod, A, exec, rofi -show"
+      "$mainMod, A, exec, rofi -show drun"
 
       # Switch workspaces
       "$mainMod, 1, workspace, 1"

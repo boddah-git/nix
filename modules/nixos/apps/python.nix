@@ -2,11 +2,11 @@
 
 {
   environment.systemPackages = with pkgs; [
-    python3Full
+    python314
     jupyter
-    python313Packages.notebook
-    python313Packages.venvShellHook
-    python313Packages.pyzmq
+    python314Packages.notebook
+    python314Packages.venvShellHook
+    python314Packages.pyzmq
     stdenv.cc.cc.lib
   ];
 }

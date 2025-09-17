@@ -15,16 +15,16 @@ rec {
     
     dotfilesDir = "~/.dotfiles";
 
-    shell = "zsh";
-    shellPkg = pkgs.zsh;
+    shell = "fish";
+    shellPkg = pkgs.fish;
 
     wms = [ "hyprland" ];
 
-    browsers = [ "zen" ];
+    browsers = [ "firefox" ];
     editors = [ "vscode" ];
 
     preferredEditor = "vscode";
-    prefferedBrowser = "zen";
+    prefferedBrowser = "firefox";
 
     terminal = "kitty";
 }

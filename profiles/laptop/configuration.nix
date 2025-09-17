@@ -9,9 +9,13 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/nixos/itba/default.nix
-      ../../modules/nixos/apps/python.nix
+      # ../../modules/nixos/apps/python.nix
+      ../../modules/nixos/apps/kitty.nix
+      ../../modules/nixos/apps/rofi.nix
+      ../../modules/nixos/shells/${settings.shell}.nix
       ../../modules/nixos/korean/default.nix
-    ] ++ (map (wm: ../../modules/nixos/wm/${wm}.nix) settings.wms);
+    ] ++ (map (wm: ../../modules/nixos/wm/${wm}.nix) settings.wms)
+      ++ (map (editor: ../../modules/nixos/editor/${editor}.nix) settings.editors);
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
