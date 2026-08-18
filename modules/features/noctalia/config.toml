@@ -1,0 +1,168 @@
+[backdrop]
+enabled = true
+
+[bar.default]
+border_width = 1.0
+capsule_opacity = 0.74999998323619366
+center = [ "workspaces" ]
+end = [ "network", "bluetooth", "volume", "brightness", "battery", "control-center", "session" ]
+font_family = "JetBrainsMono NF"
+font_weight = 300
+position = "left"
+scale = 0.7500000037252903
+start = [ "clock", "date", "sysmon", "clipboard", "notifications", "media" ]
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+active_monitor_only = true
+enabled = true
+icon_size = 24
+reserve_space = false
+smart_auto_hide = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@Virtual-1", "lockscreen-login-box@winit" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@Virtual-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 960.0
+    cy = 850.0
+    output = "Virtual-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@Virtual-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@winit"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 640.0
+    cy = 681.0
+    output = "winit"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = true
+
+[plugins]
+enabled = [ "nzlov/daily-wallpaper" ]
+
+[shell]
+app_icon_color = "primary"
+font_family = "JetBrainsMono NF"
+
+    [shell.panel]
+    launcher_placement = "attached"
+    launcher_position = "auto"
+
+[theme]
+builtin = "Ayu"
+community_palette = "Ayu Blue"
+mode = "dark"
+source = "community"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "kitty", "niri" ]
+
+[wallpaper.default]
+path = "/home/boddah/Pictures/Wallpapers/daily-wallpaper/bing-en-us-2026-07-25.jpg"
+
+[wallpaper.last]
+path = "/home/boddah/Pictures/Wallpapers/daily-wallpaper/bing-en-us-2026-07-25.jpg"
+
+[wallpaper.monitors.Virtual-1]
+path = "/home/boddah/Pictures/Wallpapers/daily-wallpaper/bing-en-us-2026-07-25.jpg"
+
+[wallpaper.monitors.winit]
+path = "/home/boddah/Pictures/Wallpapers/daily-wallpaper/bing-en-us-2026-07-25.jpg"
+
+[widget.clipboard]
+scale = 1.25
+
+[widget.clock]
+format = "%R"
+tooltip_format = "%T"
+
+[widget.control-center]
+capsule = true
+capsule_fill = "primary"
+capsule_padding = 8
+capsule_radius = "auto"
+color = "on_primary"
+
+[widget.date]
+capsule = true
+capsule_fill = "secondary"
+capsule_radius = 7
+color = "on_secondary"
+format = "%d %b"
+tooltip_format = "%F"
+
+[widget.launcher]
+capsule = true
+
+[widget.media]
+scale = 1.25
+
+[widget.network]
+scale = 1.25
+show_label = false
+
+[widget.notifications]
+scale = 1.25
+
+[widget.session]
+capsule = true
+capsule_border = "error"
+capsule_opacity = 0.0
+capsule_padding = 9
+capsule_radius = "auto"
+color = "error"
+
+[widget.sysmon]
+capsule = true
+
+[widget.volume]
+capsule = true
+
+[widget.workspaces]
+style = "minimal"
