@@ -93,24 +93,30 @@ font_family = "JetBrainsMono NF"
     launcher_placement = "attached"
     launcher_position = "auto"
 
+[templates.nvim-base16]
+input_path = "~/.config/nvim/lua/matugen-template.lua"
+output_path = "~/.config/nvim/lua/matugen.lua"
+post_hook = "pkill -SIGUSR1 nvim"
+
 [theme]
 builtin = "Ayu"
-community_palette = "Ayu Blue"
+community_palette = "Catppuccin Mocha Blue"
 mode = "dark"
 source = "community"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "kitty", "niri" ]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "niri" ]
+    community_ids = [ "neovim" ]
 
 [wallpaper.default]
-path = "/home/boddah/Pictures/Wallpapers/daily-wallpaper/bing-en-us-2026-07-25.jpg"
+path = "/home/boddah/Pictures/Wallpapers/daily-wallpaper/bing-en-us-2026-08-30.jpg"
 
 [wallpaper.last]
-path = "/home/boddah/Pictures/Wallpapers/daily-wallpaper/bing-en-us-2026-07-25.jpg"
+path = "/home/boddah/Pictures/Wallpapers/daily-wallpaper/bing-en-us-2026-08-30.jpg"
 
 [wallpaper.monitors.Virtual-1]
-path = "/home/boddah/Pictures/Wallpapers/daily-wallpaper/bing-en-us-2026-07-25.jpg"
+path = "/home/boddah/Pictures/Wallpapers/daily-wallpaper/bing-en-us-2026-08-30.jpg"
 
 [wallpaper.monitors.winit]
 path = "/home/boddah/Pictures/Wallpapers/daily-wallpaper/bing-en-us-2026-07-25.jpg"
